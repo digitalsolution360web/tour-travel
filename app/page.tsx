@@ -1,81 +1,84 @@
 import HeroSlider from "@/components/HeroSlider";
 import Link from "next/link";
 import Image from "next/image";
-import { Star, MapPin, Car, Hotel, CheckCircle, ArrowRight, Phone } from "lucide-react";
+import { Star, MapPin, Car, Hotel, CheckCircle, ArrowRight, Phone, MessageSquare } from "lucide-react";
 
 const featuredPackages = [
   {
     id: "shimla",
     title: "Shimla Hill Station Special",
     image: "/shi3.jpg",
-    price: "Starting ₹7,999",
+    price: "₹7,999",
     spots: ["The Ridge", "Kufri", "Mall Road"],
   },
   {
     id: "rishikesh",
     title: "Rishikesh Adventure Tour",
     image: "/rishi4.jpg",
-    price: "Starting ₹5,499",
+    price: "₹5,499",
     spots: ["River Rafting", "Triveni Ghat", "Ram Jhula"],
   },
   {
     id: "manali",
     title: "Manali & Solang Valley",
     image: "/shi.jpg",
-    price: "Starting ₹9,999",
+    price: "₹9,999",
     spots: ["Atal Tunnel", "Solang Valley", "Hadimba Temple"],
   },
 ];
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-white">
       <HeroSlider />
 
       {/* Featured Packages */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Popular Tour Packages</h2>
-            <div className="w-20 h-1 bg-accent mx-auto mb-6"></div>
-            <p className="text-muted text-lg max-w-2xl mx-auto">
-              Explore our handpicked destinations designed to give you the ultimate travel experience.
+      <section className="py-24 bg-white relative overflow-hidden">
+        <div className="section-container">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+            <div className="text-left">
+              <h4 className="text-accent mb-4">Exquisite Escapes</h4>
+              <h2 className="leading-[0.9]">
+                Popular <span className="text-accent">Tour</span> <br />Packages
+              </h2>
+            </div>
+            <p className="text-primary/60 max-w-md font-bold text-lg leading-relaxed">
+              Explore our handpicked destinations designed to give you the ultimate travel experience with comfort and class.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {featuredPackages.map((pkg) => (
-              <div key={pkg.id} className="group bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 transition-all hover:-translate-y-2">
-                <div className="relative h-64 overflow-hidden">
+              <div key={pkg.id} className="group bg-white rounded-[50px] overflow-hidden shadow-[0_40px_100px_rgba(4,72,78,0.1)] border border-gray-50 transition-all hover:-translate-y-4">
+                <div className="relative h-72 overflow-hidden">
                   <Image
                     src={pkg.image}
                     alt={pkg.title}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute top-4 left-4 bg-accent text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg">
+                  <div className="absolute top-6 left-6 bg-accent text-primary px-5 py-2 rounded-full text-xs font-black shadow-2xl uppercase tracking-widest">
                     Best Seller
                   </div>
                 </div>
-                <div className="p-8">
-                  <div className="flex items-center gap-1 text-accent mb-3">
-                    <Star size={16} fill="currentColor" />
-                    <Star size={16} fill="currentColor" />
-                    <Star size={16} fill="currentColor" />
-                    <Star size={16} fill="currentColor" />
-                    <Star size={16} fill="currentColor" />
-                    <span className="text-primary text-sm font-medium ml-2">4.9 (120+ Reviews)</span>
+                <div className="p-10">
+                   <div className="flex items-center gap-1 text-accent mb-4">
+                    {[...Array(5)].map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
+                    <span className="text-primary/40 text-[10px] font-black ml-2 uppercase tracking-[0.2em]">4.9 • 120+ REVIEWS</span>
                   </div>
-                  <h3 className="text-2xl font-bold mb-3 group-hover:text-accent transition-colors">{pkg.title}</h3>
-                  <div className="flex flex-wrap gap-2 mb-6">
+                  <h3 className="mb-4 group-hover:text-accent transition-colors leading-tight">{pkg.title}</h3>
+                  <div className="flex flex-wrap gap-2 mb-8">
                     {pkg.spots.map((spot) => (
-                      <span key={spot} className="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">{spot}</span>
+                      <span key={spot} className="bg-gray-50 text-primary/60 text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest border border-gray-100">{spot}</span>
                     ))}
                   </div>
-                  <div className="flex items-center justify-between pt-6 border-t border-gray-100">
-                    <span className="text-xl font-bold text-primary">{pkg.price}</span>
-                    <Link href={`/packages/${pkg.id}`} className="text-accent font-bold flex items-center gap-1 hover:gap-2 transition-all">
-                      Details <ArrowRight size={18} />
+                  <div className="flex items-center justify-between pt-8 border-t border-gray-50">
+                    <div>
+                        <p className="text-[10px] font-black text-primary/40 uppercase tracking-widest mb-1">Starting from</p>
+                        <span className="text-3xl font-black text-primary">{pkg.price}</span>
+                    </div>
+                    <Link href={`/packages/${pkg.id}`} className="w-14 h-14 bg-primary text-white rounded-2xl flex items-center justify-center hover:bg-accent hover:text-primary transition-all group/btn shadow-xl">
+                      <ArrowRight size={24} className="group-hover/btn:translate-x-1 transition-transform" />
                     </Link>
                   </div>
                 </div>
@@ -85,59 +88,60 @@ export default function Home() {
         </div>
       </section>
 
-      {/* World-Class Comfort & Standards Section - Matching Screenshot */}
-      <section className="py-24 bg-primary text-white overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-        <div className="absolute bottom-0 left-0 w-64 h-64 border-4 border-white/5 rounded-full -translate-x-1/2 translate-y-1/2"></div>
+      {/* World-Class Comfort & Standards Section - Reduced Padding & Professional Scale */}
+      <section className="py-20 bg-primary text-white overflow-hidden relative rounded-t-[60px] md:rounded-t-[100px]">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-80 h-80 border-[40px] border-white/5 rounded-full -translate-x-1/2 translate-y-1/2"></div>
         
-        <div className="max-w-[1400px] mx-auto px-4 relative z-10 text-center mb-16">
-          <h2 className="text-2xl md:text-4xl font-serif font-bold text-accent mb-4">World-Class Comfort & Standards</h2>
-          <p className="text-white/80 text-lg max-w-3xl mx-auto font-medium">
-            We don't just provide tours; we provide memories wrapped in luxury and local wisdom.
+        <div className="section-container relative z-10 text-center mb-16">
+          <h4 className="text-accent mb-4">Unmatched Hospitality</h4>
+          <h2 className="text-white mb-6">World-Class Comfort</h2>
+          <p className="text-white/60 text-lg max-w-2xl mx-auto font-medium leading-relaxed">
+            We don't just provide tours; we provide memories wrapped in luxury and local wisdom. Every detail is crafted for your perfection.
           </p>
         </div>
 
-        <div className="max-w-[1400px] mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+        <div className="section-container grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
           {/* Box 1: Fleet */}
-          <div className="bg-secondary/40 backdrop-blur-sm p-10 rounded-[40px] border border-white/10 hover:border-accent/30 transition-all group">
-            <div className="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <Car className="text-accent" size={32} />
+          <div className="bg-white/5 backdrop-blur-xl p-10 rounded-[40px] border border-white/10 hover:bg-white/10 transition-all group">
+            <div className="w-14 h-14 bg-accent text-primary rounded-2xl flex items-center justify-center mb-8 group-hover:rotate-6 transition-transform shadow-lg">
+              <Car size={28} />
             </div>
-            <h3 className="text-2xl font-serif font-bold text-white mb-6">Our Luxury Fleet</h3>
+            <h3 className="text-xl font-bold text-white mb-6 tracking-tight">Our Luxury Fleet</h3>
             <ul className="space-y-3">
-              {["Maruti Suzuki Aura", "Maruti Ertiga", "Maruti Dzire", "Force Traveller", "Urbania Minibus", "Full-Size Bus"].map(item => (
-                <li key={item} className="flex items-center gap-3 text-white/90 font-medium">
-                  <CheckCircle className="text-accent" size={18} /> {item}
+              {["Maruti Suzuki Aura", "Maruti Ertiga", "Maruti Dzire", "Force Traveller", "Urbania Minibus", "Luxury Coaches"].map(item => (
+                <li key={item} className="flex items-center gap-3 text-white/50 font-bold text-[13px] group-hover:text-white/80 transition-colors">
+                  <div className="w-1.5 h-1.5 bg-accent rounded-full"></div> {item}
                 </li>
               ))}
             </ul>
           </div>
 
           {/* Box 2: Premium Stays */}
-          <div className="bg-secondary/40 backdrop-blur-sm p-10 rounded-[40px] border border-white/10 hover:border-accent/30 transition-all group">
-            <div className="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <Hotel className="text-accent" size={32} />
+          <div className="bg-white/5 backdrop-blur-xl p-10 rounded-[40px] border border-white/10 hover:bg-white/10 transition-all group">
+            <div className="w-14 h-14 bg-accent text-primary rounded-2xl flex items-center justify-center mb-8 group-hover:rotate-6 transition-transform shadow-lg">
+              <Hotel size={28} />
             </div>
-            <h3 className="text-2xl font-serif font-bold text-white mb-6">Premium Stays</h3>
+            <h3 className="text-xl font-bold text-white mb-6 tracking-tight">Premium Stays</h3>
             <ul className="space-y-3">
-              {["3-Star Rated Hotels", "Clean & Comfortable Rooms", "Breakfast Included", "Prime Locations", "Hot Water & WiFi", "Family & Couple Friendly"].map(item => (
-                <li key={item} className="flex items-center gap-3 text-white/90 font-medium">
-                  <CheckCircle className="text-accent" size={18} /> {item}
+              {["3-Star+ Rated Hotels", "Breakfast Included", "Prime City Locations", "Hot Water & WiFi", "Family & Couple Friendly", "Highest Safety"].map(item => (
+                <li key={item} className="flex items-center gap-3 text-white/50 font-bold text-[13px] group-hover:text-white/80 transition-colors">
+                  <div className="w-1.5 h-1.5 bg-accent rounded-full"></div> {item}
                 </li>
               ))}
             </ul>
           </div>
 
           {/* Box 3: Perks */}
-          <div className="bg-secondary/40 backdrop-blur-sm p-10 rounded-[40px] border border-white/10 hover:border-accent/30 transition-all group">
-            <div className="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <Star className="text-accent" size={32} />
+          <div className="bg-white/5 backdrop-blur-xl p-10 rounded-[40px] border border-white/10 hover:bg-white/10 transition-all group">
+            <div className="w-14 h-14 bg-accent text-primary rounded-2xl flex items-center justify-center mb-8 group-hover:rotate-6 transition-transform shadow-lg">
+              <Star size={28} />
             </div>
-            <h3 className="text-2xl font-serif font-bold text-white mb-6">Tour Package Perks</h3>
+            <h3 className="text-xl font-bold text-white mb-6 tracking-tight">Tour Package Perks</h3>
             <ul className="space-y-3">
-              {["Doorstep Pickup", "Drop Facility", "Hotel Stay", "Guided Sightseeing", "Friendly Environment", "24/7 Support"].map(item => (
-                <li key={item} className="flex items-center gap-3 text-white/90 font-medium">
-                  <CheckCircle className="text-accent" size={18} /> {item}
+              {["Doorstep Pickup & Drop", "Professional Local Guide", "Curated Sightseeing", "24/7 Support", "Friendly Environment", "Local Experiences"].map(item => (
+                <li key={item} className="flex items-center gap-3 text-white/50 font-bold text-[13px] group-hover:text-white/80 transition-colors">
+                  <div className="w-1.5 h-1.5 bg-accent rounded-full"></div> {item}
                 </li>
               ))}
             </ul>
@@ -145,20 +149,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Popular Activities Section - NEW SECTION */}
-      <section className="py-24 bg-white">
+      {/* Popular Activities Section - Reduced Padding */}
+      <section className="py-20 bg-white relative">
         <div className="section-container">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
             <div className="text-left">
-              <h4 className="text-accent font-black uppercase tracking-[0.3em] text-sm mb-4">Adventure Awaits</h4>
-              <h2 className="text-2xl md:text-4xl font-serif font-black text-primary leading-none tracking-tighter">Popular Activities</h2>
+              <h4 className="text-accent mb-4">Adventure Awaits</h4>
+              <h2 className="leading-none">Popular Activities</h2>
             </div>
-            <p className="text-primary/60 max-w-md font-medium">
-              From the thrills of white water rafting to the peace of ancient temple walks, discover what makes the Himalayas unique.
+            <p className="text-primary/40 max-w-sm font-bold text-[15px] leading-relaxed">
+              From the thrills of white water rafting to the peace of ancient temple walks, discover true Himalayan spirit.
             </p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
             {[
               { name: "River Rafting", icon: "🌊" },
               { name: "Mountain Trek", icon: "🏔️" },
@@ -171,44 +175,40 @@ export default function Home() {
               { name: "Paragliding", icon: "🪂" },
               { name: "Camping", icon: "⛺" },
             ].map((act, i) => (
-              <div key={i} className="bg-gray-50 p-8 rounded-[30px] text-center hover:bg-accent group transition-all cursor-default border border-gray-100">
-                <div className="text-4xl mb-4 group-hover:scale-125 transition-transform inline-block">{act.icon}</div>
-                <h5 className="font-black text-primary text-sm uppercase tracking-tighter">{act.name}</h5>
+              <div key={i} className="bg-gray-50/50 p-6 rounded-[30px] text-center hover:bg-accent border border-gray-100 hover:border-accent hover:shadow-xl transition-all group cursor-default">
+                <div className="text-3xl mb-4 group-hover:scale-110 transition-transform inline-block">{act.icon}</div>
+                <h5 className="font-black text-primary text-[10px] uppercase tracking-widest">{act.name}</h5>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Testimonials Section - NEW SECTION */}
-      <section className="py-24 bg-gray-50">
+      {/* Testimonials Section - Reduced Padding */}
+      <section className="py-20 bg-gray-50 rounded-[60px] md:rounded-[100px] mx-4 my-4">
         <div className="section-container">
           <div className="text-center mb-16">
-            <h2 className="text-2xl md:text-4xl font-serif font-black text-primary leading-none tracking-tighter mb-6">Traveler Stories</h2>
-            <div className="w-24 h-2 bg-accent mx-auto rounded-full"></div>
+            <h4 className="text-accent mb-4">Guest Feedback</h4>
+            <h2>Traveler Stories</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { name: "Anjali Gupta", city: "Mumbai", text: "The Shimla tour was magical. The Force Urbania was very comfortable for our family of 12. Highly recommended!" },
-              { name: "Vikram Singh", city: "Bangalore", text: "Best rafting experience in Rishikesh! The guides were very professional and the safety standards were top-notch." },
-              { name: "Suresh Mehra", city: "Delhi", text: "Premium stays indeed! Every hotel we stayed in was 4-star category. Fantastic value for money." }
+              { name: "Anjali Gupta", city: "Mumbai", text: "The Shimla tour was magical. The Force Urbania was very comfortable for our family of 12." },
+              { name: "Vikram Singh", city: "Bangalore", text: "Best rafting experience in Rishikesh! The guides were very professional and safe." },
+              { name: "Suresh Mehra", city: "Delhi", text: "Premium stays indeed! Every hotel we stayed in was 4-star category. Fantastic value." }
             ].map((t, i) => (
-              <div key={i} className="bg-white p-10 rounded-[40px] shadow-xl border border-gray-100 relative">
-                <div className="text-accent text-5xl font-serif absolute top-6 right-10 opacity-30">“</div>
+              <div key={i} className="bg-white p-10 rounded-[40px] shadow-xl shadow-primary/5 border border-white relative overflow-hidden group">
+                <div className="text-accent text-6xl font-serif absolute -top-2 -right-2 opacity-10">“</div>
                 <div className="flex gap-1 text-accent mb-6">
-                  <Star size={16} fill="currentColor" />
-                  <Star size={16} fill="currentColor" />
-                  <Star size={16} fill="currentColor" />
-                  <Star size={16} fill="currentColor" />
-                  <Star size={16} fill="currentColor" />
+                  {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="currentColor" />)}
                 </div>
-                <p className="text-primary font-medium text-lg mb-8 leading-relaxed">"{t.text}"</p>
+                <p className="text-primary/70 font-bold text-[16px] mb-10 leading-relaxed relative z-10 italic">"{t.text}"</p>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-black">{t.name[0]}</div>
+                  <div className="w-12 h-12 bg-primary/5 text-accent rounded-2xl flex items-center justify-center font-black text-lg border border-accent/10">{t.name[0]}</div>
                   <div>
-                    <h6 className="font-black text-primary leading-tight">{t.name}</h6>
-                    <span className="text-accent text-xs font-black uppercase tracking-widest">{t.city}</span>
+                    <h6 className="font-black text-primary text-base leading-tight">{t.name}</h6>
+                    <span className="text-accent text-[9px] font-black uppercase tracking-[0.2em]">{t.city}</span>
                   </div>
                 </div>
               </div>
@@ -217,29 +217,33 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Gold Banner Section - Reduced Padding and Gaps */}
+      {/* Gold Banner Section - Reduced Padding & professional touch */}
       <section className="py-16 bg-white">
-        <div className="max-w-[1400px] mx-auto px-4 md:px-10">
-          <div className="bg-accent rounded-[50px] p-10 md:p-14 text-center relative overflow-hidden shadow-2xl">
-             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 "></div>
-             <div className="relative z-10 font-serif mb-4">
-                <h2 className="text-3xl md:text-5xl font-black text-primary leading-[0.8] mb-0">Ready for Your</h2>
-                <h2 className="text-3xl md:text-5xl font-black text-white leading-[1.2] mt-0">Dream Getaway?</h2>
-             </div>
-             <p className="text-primary font-bold text-lg mb-8 max-w-2xl mx-auto leading-tight relative z-10">
-                Call us now or get a free custom quote. Our travel experts are waiting to plan your perfect Shimla & Rishikesh holiday.
+        <div className="section-container">
+          <div className="bg-accent rounded-[50px] p-12 md:p-16 text-center relative overflow-hidden shadow-[0_40px_80px_rgba(255,179,3,0.25)]">
+             <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+             <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-2xl"></div>
+             
+              <div className="relative z-10 mb-8 flex flex-col md:flex-row items-center justify-center gap-x-6 gap-y-0">
+                <h2 className="text-primary">Ready for Your</h2>
+                <h2 className="text-white">Dream Getaway?</h2>
+              </div>
+             <p className="text-primary/80 font-bold text-lg mb-10 max-w-xl mx-auto leading-relaxed relative z-10">
+                Call us now or get a free custom quote. Our travel experts are waiting to plan your holiday.
              </p>
-             <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
-                <Link href="/contact" className="bg-primary text-white px-10 py-4 rounded-full font-black text-lg shadow-xl hover:scale-105 transition-transform uppercase tracking-tighter">
-                   Book Your Tour Now
+             <div className="flex flex-col sm:flex-row gap-5 justify-center relative z-10">
+                <Link href="/contact" className="bg-primary hover:bg-secondary text-white px-10 py-4 rounded-full font-black text-sm shadow-xl transition-all hover:scale-105 uppercase tracking-[0.1em]">
+                   Book Tour Now
                 </Link>
-                <Link href="tel:+911234567890" className="bg-white text-primary px-10 py-4 rounded-full font-black text-lg shadow-xl hover:scale-105 transition-transform flex items-center justify-center gap-3">
-                   <Phone size={24} className="text-accent" /> Call Specialist
+                <Link href="tel:+919876543210" className="bg-white text-primary px-10 py-4 rounded-full font-black text-sm shadow-lg transition-all hover:scale-105 flex items-center justify-center gap-3 uppercase tracking-[0.1em]">
+                   <Phone size={20} className="text-accent" /> Call Specialist
                 </Link>
              </div>
           </div>
         </div>
       </section>
+
     </main>
   );
 }
+

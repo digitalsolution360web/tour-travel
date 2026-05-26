@@ -26,38 +26,38 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white py-2 shadow-md" : "bg-white/95 py-4 shadow-sm"
+        isScrolled ? "bg-white py-3 shadow-md" : "bg-white/95 py-3 md:py-5 shadow-sm border-b border-gray-100"
       }`}
     >
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
         <div className="flex justify-between items-center">
-          {/* Logo - Matching Screenshot */}
-          <Link href="/" className="flex items-center gap-3">
-            <div className="relative w-10 h-10 bg-primary rounded-full flex items-center justify-center overflow-hidden">
-               <div className="absolute inset-0 bg-accent transform -translate-x-1/2 -translate-y-1/2 rotate-45 scale-75"></div>
-               <span className="relative text-white font-black text-xl z-10">W</span>
+          {/* Logo - Premium Scale */}
+          <Link href="/" className="flex items-center gap-2.5 group">
+            <div className="relative w-11 h-11 bg-primary rounded-full flex items-center justify-center overflow-hidden shadow-lg group-hover:bg-accent transition-colors duration-500">
+               <div className="absolute inset-0 bg-white/20 transform -translate-x-1/2 -translate-y-1/2 rotate-45 scale-75"></div>
+               <span className="relative text-white font-black text-2xl z-10">T</span>
             </div>
             <div className="flex flex-col">
-              <span className="text-2xl font-black tracking-tighter text-primary leading-tight">WANDERLUST</span>
-              <span className="text-[10px] font-bold tracking-[0.2em] text-accent mt-[-4px]">TOURS & TRAVELS</span>
+              <span className="text-xl md:text-2xl font-bold tracking-tight text-primary leading-none transition-colors group-hover:text-accent">TRAVOTOURS</span>
+              <span className="text-[9px] font-bold tracking-[0.4em] text-accent mt-0.5 uppercase">Premium Escapes</span>
             </div>
           </Link>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-12">
+          {/* Desktop Menu - Professional Scale */}
+          <div className="hidden md:flex items-center gap-10">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="font-black text-base tracking-tight text-primary transition-colors hover:text-accent relative group"
+                className="font-bold text-[15px] tracking-tight text-primary/80 transition-all hover:text-accent relative group"
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-1 bg-accent transition-all group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all group-hover:w-full"></span>
               </Link>
             ))}
             <Link
               href="/contact"
-              className="bg-accent hover:bg-primary hover:text-white text-primary px-10 py-3 rounded-full font-black text-base transition-all transform hover:scale-105 shadow-[0_8px_20px_rgba(255,179,3,0.4)] uppercase tracking-tighter"
+              className="bg-accent hover:bg-primary hover:text-white text-primary px-8 py-3 rounded-full font-bold text-[14px] transition-all transform hover:scale-105 shadow-xl uppercase tracking-widest border border-accent/20 ml-2"
             >
               Book Now
             </Link>
@@ -67,9 +67,9 @@ export default function Navbar() {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-primary"
+              className="text-primary p-2"
             >
-              {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
@@ -79,23 +79,23 @@ export default function Navbar() {
       <div className={`md:hidden fixed inset-0 z-[60] bg-primary transition-all duration-500 ease-in-out ${
         isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
       }`}>
-        <div className="flex flex-col h-full p-8 pt-24 relative">
+        <div className="flex flex-col h-full p-8 pt-20 relative">
           {/* Close Button */}
           <button 
             onClick={() => setIsMobileMenuOpen(false)}
-            className="absolute top-6 right-6 text-white bg-white/10 p-2 rounded-full"
+            className="absolute top-6 right-6 text-white bg-white/5 p-3 rounded-full"
           >
-            <X size={32} />
+            <X size={24} />
           </button>
 
-          {/* Links */}
-          <div className="flex flex-col gap-8 mt-10">
+          {/* Links - Reduced for Professionalism */}
+          <div className="flex flex-col gap-5 mt-6">
             {navLinks.map((link, i) => (
               <Link
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`text-2xl font-serif font-black text-white hover:text-accent transition-colors tracking-tighter transform transition-all duration-500 ${
+                className={`text-2xl font-bold text-white hover:text-accent transition-colors tracking-tight transform transition-all duration-500 ${
                   isMobileMenuOpen ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"
                 }`}
                 style={{ transitionDelay: `${i * 100}ms` }}
@@ -106,20 +106,21 @@ export default function Navbar() {
           </div>
 
           {/* Bottom Branding */}
-          <div className="mt-auto pt-10 border-t border-white/10">
-             <div className="flex gap-6 mb-8">
-               <div className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-accent">
-                 <Phone size={24} />
+          <div className="mt-auto pt-8 border-t border-white/10">
+             <div className="flex gap-5 mb-6">
+               <div className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-accent">
+                 <Phone size={20} />
                </div>
                <div>
-                 <p className="text-[10px] font-black text-accent uppercase tracking-widest">Call us</p>
-                 <p className="text-xl font-bold text-white">+91 98765 43210</p>
+                 <p className="text-[9px] font-black text-accent uppercase tracking-[0.2em] mb-0.5">Assistance</p>
+                 <p className="text-lg font-bold text-white tracking-tight leading-none">+91 98765 43210</p>
                </div>
              </div>
-             <p className="text-white/40 text-sm font-medium italic">© 2026 Wanderlust Tours & Travels. All rights reserved.</p>
+             <p className="text-white/30 text-[10px] font-medium italic truncate">© 2026 Travotours & Travels. All rights reserved.</p>
           </div>
         </div>
       </div>
     </nav>
   );
 }
+

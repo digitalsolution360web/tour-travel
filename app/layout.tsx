@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Outfit, Playfair_Display } from "next/font/google";
+import { Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StickyBottomBar from "@/components/StickyBottomBar";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
-const outfit = Outfit({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-outfit",
+  variable: "--font-jakarta",
 });
 
 const playfair = Playfair_Display({
@@ -17,8 +17,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "TourTra | Professional Tour & Travel Packages",
-  description: "Experience the best of Shimla, Rishikesh, and Manali with TourTra. Spiritual and adventurous tour packages with premium facilities.",
+  title: "Travotours | Premium Tour & Travel Packages",
+  description: "Experience the best of Shimla, Rishikesh, and Manali with Travotours. Premium tour packages with luxury stays and expert local guides.",
 };
 
 export default function RootLayout({
@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${outfit.variable} ${playfair.variable} font-sans antialiased`}>
+      <body className={`${jakarta.variable} ${playfair.variable} font-sans antialiased`}>
         <Navbar />
         {children}
         <Footer />

@@ -61,22 +61,22 @@ export default function HeroSlider() {
           />
           <div className="absolute inset-0 z-20 flex flex-col justify-center px-4">
             <div className="max-w-[1400px] mx-auto w-full px-6 md:px-10 flex flex-col items-start text-left">
-              <h1 className="text-4xl md:text-6xl font-serif font-black text-white mb-4 animate-fade-in drop-shadow-lg tracking-tighter leading-tight max-w-3xl">
+              <h1 className="text-white mb-6 animate-fade-in drop-shadow-2xl">
                 {slide.title}
               </h1>
-              <p className="text-lg md:text-2xl text-white/90 mb-8 max-w-2xl animate-fade-in [animation-delay:200ms] font-medium leading-relaxed">
+              <p className="text-lg md:text-2xl text-white/90 mb-10 max-w-2xl animate-fade-in [animation-delay:200ms] font-medium leading-relaxed">
                 {slide.subtitle}
               </p>
               <div className="flex flex-col sm:flex-row gap-5 animate-fade-in [animation-delay:400ms]">
                 <Link
                   href={slide.link}
-                  className="bg-accent hover:bg-white text-primary px-10 py-3.5 rounded-full font-black text-lg transition-all transform hover:scale-105 shadow-xl uppercase tracking-tighter text-center"
+                  className="bg-accent hover:bg-white text-primary px-10 py-4 rounded-full font-black text-sm transition-all transform hover:scale-105 shadow-xl uppercase tracking-widest text-center"
                 >
                   Explore Package
                 </Link>
                 <Link
                   href="/contact"
-                  className="bg-white/10 backdrop-blur-md hover:bg-white/20 text-white border-2 border-white/30 px-10 py-3.5 rounded-full font-black text-lg transition-all transform hover:scale-105 uppercase tracking-tighter text-center"
+                  className="bg-white/10 backdrop-blur-md hover:bg-white/20 text-white border-2 border-white/30 px-10 py-4 rounded-full font-black text-sm transition-all transform hover:scale-105 uppercase tracking-widest text-center"
                 >
                   Contact Us
                 </Link>
