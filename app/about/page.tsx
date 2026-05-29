@@ -12,7 +12,7 @@ export default function AboutPage() {
           <h4 className="text-accent mb-4">Our Legacy</h4>
           <h1 className="text-white mb-6 animate-fade-in tracking-tight">About Travo<span className="text-accent">Tours</span></h1>
           <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto font-medium leading-relaxed">
-            We are dedicated to providing unforgettable travel experiences across the majestic landscapes of Northern India since 2015.
+            We are dedicated to providing unforgettable travel experiences across the majestic landscapes of Northern India since 2025.
           </p>
         </div>
       </section>
