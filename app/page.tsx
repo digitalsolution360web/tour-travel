@@ -10,6 +10,8 @@ const featuredPackages = [
     image: "/shi3.jpg",
     price: "₹7,999",
     spots: ["The Ridge", "Kufri", "Mall Road"],
+    rating: 4.9,
+    reviews: "120+"
   },
   {
     id: "rishikesh",
@@ -17,6 +19,8 @@ const featuredPackages = [
     image: "/rishi4.jpg",
     price: "₹5,499",
     spots: ["River Rafting", "Triveni Ghat", "Ram Jhula"],
+    rating: 4.8,
+    reviews: "95+"
   },
   {
     id: "manali",
@@ -24,6 +28,8 @@ const featuredPackages = [
     image: "/shi.jpg",
     price: "₹9,999",
     spots: ["Atal Tunnel", "Solang Valley", "Hadimba Temple"],
+    rating: 5.0,
+    reviews: "150+"
   },
 ];
 
@@ -63,8 +69,8 @@ export default function Home() {
                 </div>
                 <div className="p-10">
                    <div className="flex items-center gap-1 text-accent mb-4">
-                    {[...Array(5)].map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
-                    <span className="text-primary/40 text-[10px] font-black ml-2 uppercase tracking-[0.2em]">4.9 • 120+ REVIEWS</span>
+                    {[...Array(5)].map((_, i) => <Star key={i} size={16} fill={i < Math.floor(pkg.rating) ? "currentColor" : "none"} className={i < Math.floor(pkg.rating) ? "" : "text-gray-200"} />)}
+                    <span className="text-primary/40 text-[10px] font-black ml-2 uppercase tracking-[0.2em]">{pkg.rating} • {pkg.reviews} REVIEWS</span>
                   </div>
                   <h3 className="mb-4 group-hover:text-accent transition-colors leading-tight">{pkg.title}</h3>
                   <div className="flex flex-wrap gap-2 mb-8">
@@ -161,23 +167,30 @@ export default function Home() {
               From the thrills of white water rafting to the peace of ancient temple walks, discover true Himalayan spirit.
             </p>
           </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+                   <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
             {[
-              { name: "River Rafting", icon: "🌊" },
-              { name: "Mountain Trek", icon: "🏔️" },
-              { name: "Temple Tours", icon: "🛕" },
-              { name: "Local Food", icon: "🍲" },
-              { name: "Photography", icon: "📸" },
-              { name: "Hot Springs", icon: "🔥" },
-              { name: "Jungle Safari", icon: "🦁" },
-              { name: "Yoga Session", icon: "🧘" },
-              { name: "Paragliding", icon: "🪂" },
-              { name: "Camping", icon: "⛺" },
+              { name: "River Rafting", image: "/river.webp" },
+              { name: "Mountain Trek", image: "/mountain.webp" },
+              { name: "Temple Tours", image: "/temple.webp" },
+              { name: "Local Food", image: "/localfood.webp" },
+              { name: "Photography", image: "/photography.webp" },
+              { name: "Hot Springs", image: "/hot.webp" },
+              { name: "Jungle Safari", image: "/jungle.webp" },
+              { name: "Yoga Session", image: "/yoga.webp" },
+              { name: "Paragliding", image: "/para.webp" },
+              { name: "Camping", image: "/camping.webp" },
             ].map((act, i) => (
-              <div key={i} className="bg-gray-50/50 p-6 rounded-[30px] text-center hover:bg-accent border border-gray-100 hover:border-accent hover:shadow-xl transition-all group cursor-default">
-                <div className="text-3xl mb-4 group-hover:scale-110 transition-transform inline-block">{act.icon}</div>
-                <h5 className="font-black text-primary text-[10px] uppercase tracking-widest">{act.name}</h5>
+              <div key={i} className="group relative bg-white p-2 pb-8 rounded-[40px] text-center border border-gray-100 shadow-[0_20px_50px_rgba(4,72,78,0.05)] hover:shadow-2xl hover:shadow-accent/20 transition-all duration-500 hover:-translate-y-3 cursor-default">
+                <div className="relative h-44 w-full mb-6 rounded-[32px] overflow-hidden bg-gray-50">
+                  <Image
+                    src={act.image}
+                    alt={act.name}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                <h5 className="font-black text-primary text-[11px] uppercase tracking-[0.2em] group-hover:text-accent transition-colors duration-300 px-4">{act.name}</h5>
               </div>
             ))}
           </div>

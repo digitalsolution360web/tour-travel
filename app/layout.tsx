@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StickyBottomBar from "@/components/StickyBottomBar";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -33,6 +34,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <WhatsAppButton />
+        <ScrollToTop />
         <StickyBottomBar />
       </body>
     </html>

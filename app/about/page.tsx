@@ -10,7 +10,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-[url('/shi2.jpg')] bg-cover bg-center mix-blend-overlay opacity-30"></div>
         <div className="section-container relative z-10 text-center">
           <h4 className="text-accent mb-4">Our Legacy</h4>
-          <h1 className="text-white mb-6 animate-fade-in tracking-tight">About Tour<span className="text-accent">Tra</span></h1>
+          <h1 className="text-white mb-6 animate-fade-in tracking-tight">About Travo<span className="text-accent">Tours</span></h1>
           <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto font-medium leading-relaxed">
             We are dedicated to providing unforgettable travel experiences across the majestic landscapes of Northern India since 2015.
           </p>
@@ -53,7 +53,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Journey */}
-      <section className="py-20 bg-primary text-white overflow-hidden relative rounded-[50px] md:rounded-[80px] mx-4 mb-20">
+      {/* <section className="py-20 bg-primary text-white overflow-hidden relative rounded-[50px] md:rounded-[80px] mx-4 mb-20">
         <div className="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-[100px]"></div>
         <div className="section-container relative z-10">
           <div className="text-center mb-16">
@@ -76,7 +76,7 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Core Values */}
       <section className="py-20 bg-white">
@@ -108,12 +108,12 @@ export default function AboutPage() {
       <section className="py-20 bg-white">
         <div className="section-container">
           <div className="bg-accent rounded-[40px] p-12 md:p-20 text-center relative overflow-hidden shadow-xl">
-             <div className="relative z-10">
-                <h2 className="text-primary mb-8">Ready to Start <br />Your Story?</h2>
-                <Link href="/packages" className="inline-flex items-center gap-4 bg-primary text-white px-10 py-5 rounded-full font-bold text-xl hover:scale-105 transition-transform shadow-xl uppercase tracking-widest">
-                   View Our Packages <ArrowRight size={24} />
-                </Link>
-             </div>
+            <div className="relative z-10">
+              <h2 className="text-primary mb-8">Ready to Start <br />Your Story?</h2>
+              <Link href="/packages" className="inline-flex items-center gap-4 bg-primary text-white px-10 py-5 rounded-full font-bold text-xl hover:scale-105 transition-transform shadow-xl uppercase tracking-widest">
+                View Our Packages <ArrowRight size={24} />
+              </Link>
+            </div>
           </div>
         </div>
       </section>

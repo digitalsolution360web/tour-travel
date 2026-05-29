@@ -10,6 +10,7 @@ const packages = [
     price: "₹7,999",
     duration: "3N/4D",
     rating: 4.9,
+    reviews: "120+",
     description: "The classic Queen of Hills experience with visits to Ridge, Kufri and Mall Road."
   },
   {
@@ -19,6 +20,7 @@ const packages = [
     price: "₹5,499",
     duration: "2N/3D",
     rating: 4.8,
+    reviews: "95+",
     description: "Spiritual connection at Triveni Ghat and adrenaline-pumping Ganga Rafting."
   },
   {
@@ -27,7 +29,8 @@ const packages = [
     image: "/shi2.jpg",
     price: "₹9,999",
     duration: "4N/5D",
-    rating: 4.9,
+    rating: 5.0,
+    reviews: "150+",
     description: "Snow adventures at Solang Valley, Atal Tunnel and the serenity of Parvati Valley."
   }
 ];
@@ -64,7 +67,7 @@ export default function PackagesPage() {
                     </span>
                     <div className="flex items-center gap-1 bg-gray-50 px-4 py-1.5 rounded-full">
                        <Star size={14} className="text-accent fill-accent" />
-                       <span className="text-primary font-black text-xs">{pkg.rating} | 100+ Reviews</span>
+                       <span className="text-primary font-black text-xs">{pkg.rating} | {pkg.reviews} Reviews</span>
                     </div>
                   </div>
                   <h3 className="mb-4 text-primary leading-[1.2] group-hover:text-accent transition-colors">{pkg.title}</h3>

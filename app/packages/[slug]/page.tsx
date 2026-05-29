@@ -19,6 +19,7 @@ const packages = {
     ],
     vehicles: ["Maruti Aura", "Maruti Ertiga", "Maruti Dezire", "Force Urbania", "Luxury Bus"],
     highlights: ["3-Star+ Hotel Stay", "Friendly Environment", "Pickup & Drop Facility", "Professional Driver cum Guide"],
+    rating: 4.9,
   },
   rishikesh: {
     title: "Rishikesh Adventure & Spirituality",
@@ -32,6 +33,7 @@ const packages = {
     ],
     vehicles: ["Maruti Aura", "Maruti Ertiga", "Maruti Dezire", "Force Urbania"],
     highlights: ["River-side Camping/Resort", "3-Star+ Hotel", "Yoga Sessions", "Expert Rafting Guide"],
+    rating: 4.8,
   },
   manali: {
     title: "Manali & Solang Valley Adventure",
@@ -47,6 +49,7 @@ const packages = {
     ],
     vehicles: ["Maruti Ertiga", "Mahindra Innova", "Force Urbania", "Force Traveler"],
     highlights: ["Snow Activities", "Hot Spring Bath", "Professional Photography", "Luxury Stay"],
+    rating: 5.0,
   }
 };
 
@@ -78,7 +81,7 @@ export default function PackageDetail() {
             <div className="w-px h-6 bg-white/20 hidden sm:block"></div>
             <span className="flex items-center gap-3"><MapPin size={22} className="text-accent" /> North India Explore</span>
             <div className="w-px h-6 bg-white/20 hidden sm:block"></div>
-            <span className="flex items-center gap-3"><Star size={22} className="text-accent fill-accent" /> 4.9 Rating</span>
+            <span className="flex items-center gap-3"><Star size={22} className="text-accent fill-accent" /> {pkg.rating} Rating</span>
           </div>
         </div>
       </div>
