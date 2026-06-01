@@ -32,6 +32,76 @@ const packages = [
     rating: 5.0,
     reviews: "150+",
     description: "Snow adventures at Solang Valley, Atal Tunnel and the serenity of Parvati Valley."
+  },
+  {
+    id: "mcleodganj",
+    title: "McLeod Ganj & Triund Trekking",
+    image: "/mcleod.png",
+    price: "₹8,499",
+    duration: "4N/5D",
+    rating: 4.9,
+    reviews: "110+",
+    description: "Explore the residence of Dalai Lama, trek to Triund, and visit Bhagsu Waterfall and Naddi View Point."
+  },
+  {
+    id: "haridwar",
+    title: "Haridwar Spiritual Journey",
+    image: "/haridwar.png",
+    price: "₹6,999",
+    duration: "4N/5D",
+    rating: 4.7,
+    reviews: "85+",
+    description: "Witness the magical Evening Ganga Aarti, visit Mansa Devi, Chandi Devi, and Bharat Mata Mandir."
+  },
+  {
+    id: "jaipur",
+    title: "Jaipur Pink City Heritage",
+    image: "/jaipur.png",
+    price: "₹12,499",
+    duration: "6N/7D",
+    rating: 4.8,
+    reviews: "210+",
+    description: "Discover the royal heritage at Hawa Mahal, Amber Fort, City Palace, and Jal Mahal."
+  },
+  {
+    id: "agra",
+    title: "Agra Mughal Heritage Tour",
+    image: "/agra.png",
+    price: "₹10,999",
+    duration: "6N/7D",
+    rating: 4.9,
+    reviews: "320+",
+    description: "Experience the wonder of Taj Mahal, Agra Fort, Fatehpur Sikri, and the beautiful Mehtab Bagh."
+  },
+  {
+    id: "delhi",
+    title: "Delhi Capital City Highlights",
+    image: "/delhi.png",
+    price: "₹5,999",
+    duration: "3N/4D",
+    rating: 4.6,
+    reviews: "140+",
+    description: "Visit India Gate, Red Fort, Qutub Minar, Lotus Temple, and the magnificent Akshardham."
+  },
+  {
+    id: "nainital",
+    title: "Nainital Lakes & Hills",
+    image: "/nainital.png",
+    price: "₹7,999",
+    duration: "3N/4D",
+    rating: 4.8,
+    reviews: "180+",
+    description: "Boat in the serene Naini Lake, see Snow View Point, Naina Devi Temple, and Eco Cave Gardens."
+  },
+  {
+    id: "chopta",
+    title: "Chopta Mini Switzerland Trek",
+    image: "/mountain.webp",
+    price: "₹8,999",
+    duration: "3N/4D",
+    rating: 5.0,
+    reviews: "75+",
+    description: "Trek to Tungnath and Chandrashila, visit Deoria Tal and explore Kedarnath Wildlife Sanctuary."
   }
 ];
 

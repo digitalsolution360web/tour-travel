@@ -5,22 +5,31 @@ import { Star, MapPin, Car, Hotel, CheckCircle, ArrowRight, Phone, MessageSquare
 
 const featuredPackages = [
   {
-    id: "shimla",
-    title: "Shimla Hill Station Special",
-    image: "/shi3.jpg",
-    price: "₹7,999",
-    spots: ["The Ridge", "Kufri", "Mall Road"],
-    rating: 4.9,
-    reviews: "120+"
+    id: "jaipur",
+    title: "Jaipur Heritage Tour",
+    image: "/jaipur.png",
+    price: "₹12,499",
+    spots: ["Amber Fort", "Hawa Mahal", "City Palace"],
+    rating: 4.8,
+    reviews: "210+"
   },
   {
-    id: "rishikesh",
-    title: "Rishikesh Adventure Tour",
-    image: "/rishi4.jpg",
-    price: "₹5,499",
-    spots: ["River Rafting", "Triveni Ghat", "Ram Jhula"],
+    id: "agra",
+    title: "Agra Mughal Wonder",
+    image: "/agra.png",
+    price: "₹10,999",
+    spots: ["Taj Mahal", "Agra Fort", "Mehtab Bagh"],
+    rating: 4.9,
+    reviews: "320+"
+  },
+  {
+    id: "nainital",
+    title: "Nainital Lake Special",
+    image: "/nainital.png",
+    price: "₹7,999",
+    spots: ["Naini Lake", "Snow View", "Naina Devi"],
     rating: 4.8,
-    reviews: "95+"
+    reviews: "180+"
   },
   {
     id: "manali",
