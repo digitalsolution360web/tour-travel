@@ -31,9 +31,9 @@ export default function Navbar() {
     >
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
         <div className="flex justify-between items-center">
-          {/* Logo - Premium Scale */}
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="relative" style={{ width: "160px", height: "60px" }}>
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2 group">
+            <div className="relative" style={{ width: "140px", height: "50px" }}>
               <Image
                 src="/logoo.webp"
                 alt="Travotours Logo"
@@ -44,13 +44,13 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop Menu - Professional Scale */}
-          <div className="hidden md:flex items-center gap-10">
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="font-bold text-[15px] tracking-tight text-primary/80 transition-all hover:text-accent relative group"
+                className="font-semibold text-[14px] tracking-tight text-primary/70 transition-all hover:text-accent relative group"
               >
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all group-hover:w-full"></span>
@@ -58,7 +58,7 @@ export default function Navbar() {
             ))}
             <Link
               href="/contact"
-              className="bg-accent hover:bg-primary hover:text-white text-primary px-8 py-3 rounded-full font-bold text-[14px] transition-all transform hover:scale-105 shadow-xl uppercase tracking-widest border border-accent/20 ml-2"
+              className="bg-accent hover:bg-primary hover:text-white text-primary px-6 py-2.5 rounded-xl font-bold text-[13px] transition-all shadow-md uppercase tracking-wider ml-2"
             >
               Book Now
             </Link>

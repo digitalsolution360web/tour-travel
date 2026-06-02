@@ -43,7 +43,7 @@ export default function HeroSlider() {
   }, []);
 
   return (
-    <section className="relative h-[75vh] w-full overflow-hidden pt-[72px]">
+    <section className="relative h-[70vh] w-full overflow-hidden pt-[72px]">
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -51,32 +51,32 @@ export default function HeroSlider() {
             index === currentSlide ? "opacity-100" : "opacity-0"
           }`}
         >
-          <div className="absolute inset-0 bg-black/40 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent z-10" />
           <Image
             src={slide.image}
             alt={slide.title}
             fill
-            className="object-cover scale-110"
+            className="object-cover"
             priority={index === 0}
           />
           <div className="absolute inset-0 z-20 flex flex-col justify-center px-4">
             <div className="max-w-[1400px] mx-auto w-full px-6 md:px-10 flex flex-col items-start text-left">
-              <h1 className="text-white mb-6 animate-fade-in drop-shadow-2xl">
+              <h1 className="text-white mb-4 animate-fade-in text-4xl md:text-6xl font-bold tracking-tight">
                 {slide.title}
               </h1>
-              <p className="text-lg md:text-2xl text-white/90 mb-10 max-w-2xl animate-fade-in [animation-delay:200ms] font-medium leading-relaxed">
+              <p className="text-base md:text-xl text-white/80 mb-8 max-w-xl animate-fade-in [animation-delay:200ms] font-medium leading-relaxed">
                 {slide.subtitle}
               </p>
-              <div className="flex flex-col sm:flex-row gap-5 animate-fade-in [animation-delay:400ms]">
+              <div className="flex flex-col sm:flex-row gap-4 animate-fade-in [animation-delay:400ms]">
                 <Link
                   href={slide.link}
-                  className="bg-accent hover:bg-white text-primary px-10 py-4 rounded-full font-black text-sm transition-all transform hover:scale-105 shadow-xl uppercase tracking-widest text-center"
+                  className="bg-accent hover:bg-white text-primary px-8 py-3 rounded-xl font-bold text-sm transition-all shadow-lg uppercase tracking-wider text-center active:scale-95"
                 >
                   Explore Package
                 </Link>
                 <Link
                   href="/contact"
-                  className="bg-white/10 backdrop-blur-md hover:bg-white/20 text-white border-2 border-white/30 px-10 py-4 rounded-full font-black text-sm transition-all transform hover:scale-105 uppercase tracking-widest text-center"
+                  className="bg-white/10 backdrop-blur-md hover:bg-white/20 text-white border border-white/30 px-8 py-3 rounded-xl font-bold text-sm transition-all uppercase tracking-wider text-center active:scale-95"
                 >
                   Contact Us
                 </Link>
@@ -89,25 +89,25 @@ export default function HeroSlider() {
       {/* Controls */}
       <button
         onClick={prevSlide}
-        className="absolute left-6 top-1/2 -translate-y-1/2 z-30 p-2 rounded-full glass-dark text-white hover:bg-white/20 transition-colors hidden md:block"
+        className="absolute left-6 top-1/2 -translate-y-1/2 z-30 p-2.5 rounded-full bg-white/10 backdrop-blur-md text-white hover:bg-white/20 transition-colors hidden md:flex items-center justify-center border border-white/20"
       >
-        <ChevronLeft size={32} />
+        <ChevronLeft size={24} />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-6 top-1/2 -translate-y-1/2 z-30 p-2 rounded-full glass-dark text-white hover:bg-white/20 transition-colors hidden md:block"
+        className="absolute right-6 top-1/2 -translate-y-1/2 z-30 p-2.5 rounded-full bg-white/10 backdrop-blur-md text-white hover:bg-white/20 transition-colors hidden md:flex items-center justify-center border border-white/20"
       >
-        <ChevronRight size={32} />
+        <ChevronRight size={24} />
       </button>
 
       {/* Dots */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex gap-3">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex gap-2">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all ${
-              index === currentSlide ? "bg-accent w-8" : "bg-white/50"
+            className={`w-2 h-2 rounded-full transition-all ${
+              index === currentSlide ? "bg-accent w-6" : "bg-white/40"
             }`}
           />
         ))}

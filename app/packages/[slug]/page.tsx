@@ -183,92 +183,92 @@ export default function PackageDetail() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Header */}
-      <div className="relative h-[70vh] w-full overflow-hidden">
-        <Image src={pkg.image} alt={pkg.title} fill className="object-cover scale-105" priority />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/40 to-white z-10" />
+      <div className="relative h-[60vh] w-full overflow-hidden">
+        <Image src={pkg.image} alt={pkg.title} fill className="object-cover" priority />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 z-20">
-          <h4 className="text-accent mb-6 animate-fade-in drop-shadow-xl">Himalayan Expedition</h4>
-          <h1 className="text-white mb-10 animate-fade-in drop-shadow-2xl max-w-4xl">{pkg.title}</h1>
-          <div className="flex flex-wrap items-center justify-center gap-6 text-white font-black text-sm uppercase tracking-widest bg-white/10 backdrop-blur-xl px-10 py-5 rounded-[30px] border border-white/20 animate-fade-in [animation-delay:200ms]">
-            <span className="flex items-center gap-3"><Calendar size={22} className="text-accent" /> {pkg.duration}</span>
-            <div className="w-px h-6 bg-white/20 hidden sm:block"></div>
-            <span className="flex items-center gap-3"><MapPin size={22} className="text-accent" /> North India Explore</span>
-            <div className="w-px h-6 bg-white/20 hidden sm:block"></div>
-            <span className="flex items-center gap-3"><Star size={22} className="text-accent fill-accent" /> {pkg.rating} Rating</span>
+          <h4 className="text-accent mb-3 animate-fade-in font-medium tracking-[0.3em] uppercase text-sm">Himalayan Expedition</h4>
+          <h1 className="text-white mb-8 animate-fade-in text-4xl md:text-6xl font-bold max-w-4xl tracking-tight leading-tight">{pkg.title}</h1>
+          <div className="flex flex-wrap items-center justify-center gap-4 text-white font-semibold text-xs uppercase tracking-widest bg-white/10 backdrop-blur-md px-8 py-3.5 rounded-full border border-white/20 animate-fade-in [animation-delay:200ms]">
+            <span className="flex items-center gap-2"><Calendar size={18} className="text-accent" /> {pkg.duration}</span>
+            <div className="w-px h-4 bg-white/20 hidden sm:block"></div>
+            <span className="flex items-center gap-2"><MapPin size={18} className="text-accent" /> North India</span>
+            <div className="w-px h-4 bg-white/20 hidden sm:block"></div>
+            <span className="flex items-center gap-2"><Star size={18} className="text-accent fill-accent" /> {pkg.rating} Rating</span>
           </div>
         </div>
       </div>
 
-      <div className="section-container py-32">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-24">
+      <div className="section-container py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Main Content */}
           <div className="lg:col-span-2">
-            <div className="mb-24">
-               <h4 className="text-accent mb-4">Journey Details</h4>
-               <h2 className="mb-10 text-primary">Tour Overview</h2>
-               <p className="text-primary/70 text-xl font-bold leading-relaxed mb-12">{pkg.description}</p>
-               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                 {[
-                   { icon: ShieldCheck, label: "Verified" },
-                   { icon: Car, label: "Elite Fleet" },
-                   { icon: Hotel, label: "3-Star+" },
-                   { icon: Calendar, label: "Carefree" }
-                 ].map((item, i) => (
-                   <div key={i} className="flex flex-col items-center p-6 bg-gray-50 rounded-[30px] border border-gray-100">
-                     <item.icon size={32} className="text-accent mb-3" />
-                     <span className="font-black text-xs uppercase tracking-widest text-primary/40">{item.label}</span>
-                   </div>
-                 ))}
-               </div>
+            <div className="mb-16">
+              <span className="text-accent font-bold uppercase tracking-[0.2em] text-[12px] mb-2 block">Journey Details</span>
+              <h2 className="mb-6 text-3xl md:text-4xl font-bold text-primary">Tour Overview</h2>
+              <p className="text-primary/90 text-xl font-bold leading-relaxed mb-8">{pkg.description}</p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {[
+                  { icon: ShieldCheck, label: "Verified" },
+                  { icon: Car, label: "Elite Fleet" },
+                  { icon: Hotel, label: "3-Star+" },
+                  { icon: Calendar, label: "Carefree" }
+                ].map((item, i) => (
+                  <div key={i} className="flex flex-col items-center p-5 bg-white rounded-2xl border border-gray-200 shadow-md">
+                    <item.icon size={28} className="text-accent mb-2" />
+                    <span className="font-bold text-[11px] uppercase tracking-widest text-primary">{item.label}</span>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <div className="mb-24">
-              <h4 className="text-accent mb-4">Day-by-Day</h4>
-              <h2 className="mb-16 text-primary">Detailed Itinerary</h2>
-              <div className="space-y-6">
+            <div className="mb-16">
+              <span className="text-accent font-bold uppercase tracking-[0.2em] text-[12px] mb-2 block">Day-by-Day</span>
+              <h2 className="mb-10 text-3xl md:text-4xl font-bold text-primary">Detailed Itinerary</h2>
+              <div className="space-y-4">
                 {pkg.itinerary.map((item, i) => (
-                  <div key={i} className="group bg-gray-50/50 rounded-[50px] p-12 border border-gray-100 hover:bg-white hover:shadow-2xl transition-all cursor-default">
-                    <div className="flex flex-col md:flex-row gap-10">
-                       <div className="w-24 h-24 bg-primary text-accent rounded-[35px] flex items-center justify-center font-black text-3xl shrink-0 group-hover:rotate-6 transition-transform shadow-2xl">
-                         {i + 1}
-                       </div>
-                        <div>
-                         <h3 className="mb-6 uppercase tracking-tighter group-hover:text-accent transition-colors font-black">{item.day}</h3>
-                         <div className="flex flex-wrap gap-3">
-                           {item.spots.map(spot => (
-                             <span key={spot} className="bg-white border border-gray-100 text-primary/60 px-6 py-2.5 rounded-full text-xs font-black uppercase tracking-[0.1em]">{spot}</span>
-                           ))}
-                         </div>
-                       </div>
+                  <div key={i} className="group bg-white rounded-3xl p-6 md:p-8 border border-gray-100 hover:shadow-xl transition-all cursor-default">
+                    <div className="flex flex-col md:flex-row gap-6">
+                      <div className="w-12 h-12 bg-primary/5 text-primary rounded-xl flex items-center justify-center font-bold text-xl shrink-0 group-hover:bg-primary group-hover:text-accent transition-colors">
+                        {i + 1}
+                      </div>
+                      <div>
+                        <h3 className="mb-4 text-xl font-bold text-primary group-hover:text-accent transition-colors">{item.day}</h3>
+                        <div className="flex flex-wrap gap-2">
+                          {item.spots.map(spot => (
+                            <span key={spot} className="bg-gray-100 text-primary px-4 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wider border border-gray-200">{spot}</span>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-              <div className="bg-primary p-14 rounded-[60px] text-white shadow-2xl relative overflow-hidden group">
-                <div className="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform"></div>
-               <h2 className="text-2xl font-bold text-accent mb-12 flex items-center gap-5 tracking-tight">
-                  <Car size={32} /> Luxury Fleet
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-primary p-8 rounded-[32px] text-white shadow-lg relative overflow-hidden group">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-125 transition-transform"></div>
+                <h2 className="text-xl font-bold text-accent mb-8 flex items-center gap-3">
+                  <Car size={24} /> Luxury Fleet
                 </h2>
-                <div className="space-y-5">
+                <div className="space-y-3">
                   {pkg.vehicles.map(v => (
-                    <div key={v} className="flex items-center gap-5 text-xl font-bold">
-                      <div className="w-2 h-2 bg-accent rounded-full"></div>
+                    <div key={v} className="flex items-center gap-3 text-base font-medium text-white/90">
+                      <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
                       <span>{v}</span>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="bg-gray-50 p-14 rounded-[60px] border border-gray-100 shadow-xl group">
-                <h2 className="text-2xl font-bold text-primary mb-12 flex items-center gap-5 tracking-tight">
-                  <Hotel size={32} className="text-accent" /> Premium Stay
+              <div className="bg-white p-8 rounded-[32px] border border-gray-200 shadow-xl group">
+                <h2 className="text-xl md:text-2xl font-bold text-primary mb-8 flex items-center gap-3">
+                  <Hotel size={24} className="text-accent" /> Premium Stay
                 </h2>
-                <ul className="space-y-8">
+                <ul className="space-y-4">
                   {pkg.highlights.map(h => (
-                    <li key={h} className="flex items-center gap-5 text-primary/60 font-bold text-xl leading-snug">
-                      <CheckCircle2 className="text-accent shrink-0" size={28} />
+                    <li key={h} className="flex items-start gap-3 text-primary font-bold text-base md:text-lg leading-snug">
+                      <CheckCircle2 className="text-accent shrink-0 mt-1" size={20} />
                       {h}
                     </li>
                   ))}
@@ -279,20 +279,20 @@ export default function PackageDetail() {
 
           {/* Sidebar Booking */}
           <div className="lg:col-span-1">
-            <div className="sticky top-32 bg-white rounded-[60px] p-12 border-2 border-accent/10 shadow-[0_40px_100px_rgba(255,179,3,0.12)]">
-              <h3 className="mb-6 tracking-tighter leading-tight font-bold text-2xl">Book Your <br />Experience</h3>
-              <p className="text-primary/40 font-bold mb-12 uppercase tracking-[0.2em] text-[10px] italic">Get the best price & daily custom quote.</p>
-              
-              <div className="space-y-6 mb-12">
-                <Link href="tel:+919876543210" className="w-full py-7 bg-primary text-white rounded-[30px] font-black text-2xl flex items-center justify-center gap-5 hover:scale-105 transition-transform shadow-2xl uppercase tracking-tighter">
-                  <Phone size={32} className="text-accent" /> Call Now
+            <div className="sticky top-24 bg-white rounded-[32px] p-8 border border-gray-200 shadow-2xl">
+              <h3 className="mb-2 text-2xl font-bold text-primary">Book Your Tour</h3>
+              <p className="text-primary font-bold mb-8 uppercase tracking-widest text-[10px]">Get the best price & custom quote.</p>
+
+              <div className="space-y-3 mb-8">
+                <Link href="tel:+919876543210" className="w-full py-4 bg-primary text-white rounded-2xl font-bold text-lg flex items-center justify-center gap-3 hover:bg-primary/90 transition-colors shadow-lg active:scale-[0.98]">
+                  <Phone size={20} className="text-accent" /> Call Now
                 </Link>
-                <Link href="https://wa.me/919876543210" className="w-full py-7 bg-[#25D366] text-white rounded-[30px] font-black text-2xl flex items-center justify-center gap-5 hover:scale-105 transition-transform shadow-2xl uppercase tracking-tighter">
-                  <MessageSquare size={32} fill="currentColor" /> Chat Now
+                <Link href="https://wa.me/919876543210" className="w-full py-4 bg-[#25D366] text-white rounded-2xl font-bold text-lg flex items-center justify-center gap-3 hover:bg-[#20bd5a] transition-colors shadow-lg active:scale-[0.98]">
+                  <MessageSquare size={20} fill="currentColor" /> Chat on WhatsApp
                 </Link>
               </div>
 
-              <div className="p-8 bg-gray-50 rounded-[35px] border border-gray-100 font-bold text-center text-primary/50 text-sm leading-relaxed italic">
+              <div className="p-5 bg-gray-50 rounded-2xl border border-gray-100 font-medium text-center text-primary/60 text-xs leading-relaxed">
                 Prices depend on group size and seasonality. We guarantee the highest hospitality standards.
               </div>
             </div>
