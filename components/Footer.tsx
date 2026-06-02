@@ -83,18 +83,20 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Designed & Developed By Section - Pill Style */}
+          {/* Designed & Developed By Section - Extra Large Premium Pill */}
           <Link 
             href="https://www.digitalsolution360.in/" 
             target="_blank"
-            className="group flex items-center gap-3 px-8 py-2.5 rounded-full border border-white/10 hover:border-white/30 transition-all bg-white/5 hover:bg-white/10 shadow-xl"
+            className="group flex items-center gap-5 px-12 py-4 rounded-full border-2 border-white/30 hover:border-accent transition-all bg-white/10 hover:bg-white/20 backdrop-blur-md shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:shadow-[0_0_40px_rgba(255,255,255,0.2)] overflow-hidden relative"
           >
-            <span className="text-[9px] font-bold tracking-[0.2em] text-white/50 group-hover:text-white/80 transition-colors uppercase">
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+            <span className="text-[12px] font-bold tracking-[0.3em] text-white group-hover:text-accent transition-colors uppercase">
               Designed & Developed By
             </span>
-            <span className="text-[10px] font-bold tracking-tight text-[#00E5FF] group-hover:text-[#00ffff] transition-colors flex items-center gap-2">
+            <div className="h-6 w-[1px] bg-white/30"></div>
+            <span className="text-sm font-black tracking-wider bg-gradient-to-r from-[#00E5FF] via-[#00ffff] to-[#1DE9B6] bg-clip-text text-transparent group-hover:drop-shadow-[0_0_10px_rgba(0,255,255,0.5)] transition-all flex items-center gap-3">
               Digital Solution 360
-              <Globe size={11} className="animate-pulse" />
+              <Globe size={18} className="text-accent animate-spin-slow" />
             </span>
           </Link>
         </div>

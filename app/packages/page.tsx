@@ -107,7 +107,7 @@ const packages = [
 
 export default function PackagesPage() {
   return (
-    <main className="pt-[72px] min-h-screen bg-white">
+    <main className="pt-[72px] min-h-screen bg-slate-50">
       <section className="bg-primary py-20 text-white relative overflow-hidden rounded-b-[50px] md:rounded-b-[80px]">
         <div className="absolute inset-0 bg-[url('/rishi1.jpeg')] bg-cover bg-center mix-blend-overlay opacity-20"></div>
         <div className="section-container relative z-10 text-center">
@@ -160,7 +160,7 @@ export default function PackagesPage() {
       </section>
 
       {/* Why Our Packages? */}
-      <section className="py-20 bg-gray-50 rounded-[50px] md:rounded-[80px] mx-4 mb-20">
+      <section className="py-20 bg-slate-100 rounded-[50px] md:rounded-[80px] mx-4 mb-20">
         <div className="section-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>

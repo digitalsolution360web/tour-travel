@@ -8,6 +8,7 @@
   --font-sans: "Plus Jakarta Sans", "Inter", sans-serif;
   --font-serif: "Playfair Display", serif;
   --animate-bounce-slow: bounce-slow 2s infinite ease-in-out;
+  --animate-spin-slow: spin 8s linear infinite;
 }
 
 :root {

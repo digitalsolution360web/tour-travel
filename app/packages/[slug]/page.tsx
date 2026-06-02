@@ -3,7 +3,7 @@
 import { useParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle2, MapPin, Car, Hotel, Calendar, ArrowRight, MessageSquare, Phone, Star, ShieldCheck } from "lucide-react";
+import { CheckCircle2, MapPin, Car, Hotel, Calendar, ArrowRight, MessageSquare, Phone, Star, ShieldCheck, Mail } from "lucide-react";
 
 const packages = {
   shimla: {
@@ -277,23 +277,73 @@ export default function PackageDetail() {
             </div>
           </div>
 
-          {/* Sidebar Booking */}
+          {/* Sidebar Booking & Enquiry */}
           <div className="lg:col-span-1">
-            <div className="sticky top-24 bg-white rounded-[32px] p-8 border border-gray-200 shadow-2xl">
-              <h3 className="mb-2 text-2xl font-bold text-primary">Book Your Tour</h3>
-              <p className="text-primary font-bold mb-8 uppercase tracking-widest text-[10px]">Get the best price & custom quote.</p>
+            <div className="sticky top-24 space-y-6">
+              {/* Book Your Tour Card */}
+              <div className="bg-white rounded-[32px] p-8 border border-gray-200 shadow-xl">
+                <h3 className="mb-2 text-2xl font-bold text-primary">Book Your Tour</h3>
+                <p className="text-primary font-bold mb-8 uppercase tracking-widest text-[10px]">Get the best price & custom quote.</p>
 
-              <div className="space-y-3 mb-8">
-                <Link href="tel:+919876543210" className="w-full py-4 bg-primary text-white rounded-2xl font-bold text-lg flex items-center justify-center gap-3 hover:bg-primary/90 transition-colors shadow-lg active:scale-[0.98]">
-                  <Phone size={20} className="text-accent" /> Call Now
-                </Link>
-                <Link href="https://wa.me/919876543210" className="w-full py-4 bg-[#25D366] text-white rounded-2xl font-bold text-lg flex items-center justify-center gap-3 hover:bg-[#20bd5a] transition-colors shadow-lg active:scale-[0.98]">
-                  <MessageSquare size={20} fill="currentColor" /> Chat on WhatsApp
-                </Link>
+                <div className="space-y-3 mb-8">
+                  <Link href="tel:+919876543210" className="w-full py-4 bg-primary text-white rounded-2xl font-bold text-lg flex items-center justify-center gap-3 hover:bg-primary/90 transition-colors shadow-lg active:scale-[0.98]">
+                    <Phone size={20} className="text-accent" /> Call Now
+                  </Link>
+                  <Link href="https://wa.me/919876543210" className="w-full py-4 bg-[#25D366] text-white rounded-2xl font-bold text-lg flex items-center justify-center gap-3 hover:bg-[#20bd5a] transition-colors shadow-lg active:scale-[0.98]">
+                    <MessageSquare size={20} fill="currentColor" /> Chat on WhatsApp
+                  </Link>
+                </div>
+
+                <div className="p-5 bg-gray-50 rounded-2xl border border-gray-100 font-medium text-center text-primary/60 text-xs leading-relaxed">
+                  Prices depend on group size and seasonality. We guarantee the highest hospitality standards.
+                </div>
               </div>
 
-              <div className="p-5 bg-gray-50 rounded-2xl border border-gray-100 font-medium text-center text-primary/60 text-xs leading-relaxed">
-                Prices depend on group size and seasonality. We guarantee the highest hospitality standards.
+              {/* Quick Enquiry Form Card - Highly Professional & Visible */}
+              <div className="bg-white rounded-[32px] p-8 border border-gray-200 shadow-2xl relative overflow-hidden group">
+                <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-accent via-[#FFD700] to-accent"></div>
+                <div className="flex items-center gap-4 mb-3">
+                  <div className="w-10 h-10 bg-accent rounded-xl flex items-center justify-center text-primary shadow-lg shadow-accent/20">
+                    <Mail size={20} />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-primary leading-tight">Quick Enquiry</h4>
+                    <p className="text-[10px] font-black text-accent uppercase tracking-[0.2em]">Expert Assistance</p>
+                  </div>
+                </div>
+
+                <form className="space-y-5 mt-6">
+                  <div className="space-y-2">
+                    <label className="text-[11px] font-extrabold text-primary/70 uppercase tracking-widest ml-1">Full Name</label>
+                    <input
+                      type="text"
+                      placeholder="Enter your name"
+                      className="w-full px-6 py-4 rounded-2xl border-2 border-gray-100 bg-white focus:border-accent focus:ring-4 focus:ring-accent/10 transition-all font-bold text-sm text-primary placeholder:text-primary/30"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-[11px] font-extrabold text-primary/70 uppercase tracking-widest ml-1">Phone Number</label>
+                    <input
+                      type="tel"
+                      placeholder="+91 00000 00000"
+                      className="w-full px-6 py-4 rounded-2xl border-2 border-gray-100 bg-white focus:border-accent focus:ring-4 focus:ring-accent/10 transition-all font-bold text-sm text-primary placeholder:text-primary/30"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-[11px] font-extrabold text-primary/70 uppercase tracking-widest ml-1">Travel Requirements</label>
+                    <textarea
+                      placeholder="Tell us about your travel plan..."
+                      rows={3}
+                      className="w-full px-6 py-4 rounded-2xl border-2 border-gray-100 bg-white focus:border-accent focus:ring-4 focus:ring-accent/10 transition-all font-bold text-sm text-primary placeholder:text-primary/30 resize-none"
+                    ></textarea>
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full py-5 bg-primary text-white font-black uppercase tracking-[0.2em] text-xs rounded-2xl hover:bg-accent cursor-pointer hover:text-primary transition-all shadow-xl hover:shadow-accent/40 active:scale-[0.98] mt-2 group/btn"
+                  >
+                    Send Enquiry <span className="inline-block transition-transform group-hover/btn:translate-x-1 ml-2">→</span>
+                  </button>
+                </form>
               </div>
             </div>
           </div>
