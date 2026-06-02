@@ -9,20 +9,32 @@ const slides = [
   {
     image: "/rishi1.jpeg",
     title: "Spiritual Rishikesh",
-    subtitle: "Experience the divinity of Triveni Ghat & Lakshman Jhula",
+    subtitle: "Experience the divinity of Triveni Ghat & Lakshman Jhula with our premium guided tours.",
     link: "/packages/rishikesh",
   },
   {
     image: "/shi.jpg",
     title: "Majestic Shimla",
-    subtitle: "Walk through the Mall Road & Kufri's snow-capped peaks",
+    subtitle: "Walk through the Mall Road & Kufri's snow-capped peaks in ultimate comfort.",
     link: "/packages/shimla",
   },
   {
-    image: "/rishi2.jpg",
-    title: "Adventure Awaits",
-    subtitle: "Feel the thrill of River Rafting in the Holy Ganges",
-    link: "/packages/rishikesh",
+    image: "/jaipur.png",
+    title: "Royal Jaipur",
+    subtitle: "Discover the heritage of the Pink City with our exclusive Mughal-style tours.",
+    link: "/packages/jaipur",
+  },
+  {
+    image: "/mountain.webp",
+    title: "Chopta Trekking",
+    subtitle: "Trek to the highest Shiva temple and witness the Mini Switzerland of India.",
+    link: "/packages/chopta",
+  },
+  {
+    image: "/agra.png",
+    title: "Agra Heritage",
+    subtitle: "Witness the eternal beauty of the Taj Mahal with our premium day-to-day packages.",
+    link: "/packages/agra",
   },
 ];
 
@@ -43,13 +55,12 @@ export default function HeroSlider() {
   }, []);
 
   return (
-    <section className="relative h-[70vh] w-full overflow-hidden pt-[72px]">
+    <section className="relative h-[90vh] w-full overflow-hidden pt-[72px]">
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            index === currentSlide ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? "opacity-100" : "opacity-0"
+            }`}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent z-10" />
           <Image
@@ -106,9 +117,8 @@ export default function HeroSlider() {
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-2 h-2 rounded-full transition-all ${
-              index === currentSlide ? "bg-accent w-6" : "bg-white/40"
-            }`}
+            className={`w-2 h-2 rounded-full transition-all ${index === currentSlide ? "bg-accent w-6" : "bg-white/40"
+              }`}
           />
         ))}
       </div>

@@ -20,20 +20,20 @@ export default function Navbar() {
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
-    { name: "Tour Packages", href: "/packages" },
+    { name: "Tour \u00A0 Packages", href: "/packages" },
     { name: "Contact Us", href: "/contact" },
   ];
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white py-3 shadow-md" : "bg-white/95 py-3 md:py-5 shadow-sm border-b border-gray-100"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white py-3 shadow-md" : "bg-white/95 py-3 md:py-6 shadow-sm border-b border-gray-100"
         }`}
     >
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="relative" style={{ width: "140px", height: "50px" }}>
+            <div className="relative" style={{ width: "140px", height: "70px" }}>
               <Image
                 src="/logoo.webp"
                 alt="Travotours Logo"
@@ -50,7 +50,7 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="font-semibold text-[14px] tracking-tight text-primary/70 transition-all hover:text-accent relative group"
+                className="font-semibold text-[17px] tracking-tight text-primary/70 transition-all hover:text-accent relative group"
               >
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all group-hover:w-full"></span>
