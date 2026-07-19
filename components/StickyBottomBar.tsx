@@ -17,7 +17,7 @@ export default function StickyBottomBar() {
       {/* Contact & WhatsApp - Right Group */}
       <div className="flex-1 flex">
         <Link
-          href="https://wa.me/919876543210"
+          href="https://wa.me/918860668844"
           target="_blank"
           className="flex-1 flex flex-col items-center justify-center gap-1 text-[#25D366] border-r border-gray-50"
         >
@@ -28,7 +28,7 @@ export default function StickyBottomBar() {
         </Link>
         
         <Link
-          href="tel:+919876543210"
+          href="tel:+918860668844"
           className="flex-1 flex flex-col items-center justify-center gap-1 text-primary"
         >
           <Phone size={18} />

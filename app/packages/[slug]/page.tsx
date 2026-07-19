@@ -286,12 +286,12 @@ export default function PackageDetail() {
                 <p className="text-primary font-bold mb-8 uppercase tracking-widest text-[10px]">Get the best price & custom quote.</p>
 
                 <div className="space-y-3 mb-8">
-                  <Link href="tel:+919876543210" className="w-full py-4 bg-primary text-white rounded-2xl font-bold text-lg flex items-center justify-center gap-3 hover:bg-primary/90 transition-colors shadow-lg active:scale-[0.98]">
+                  <a href="tel:+918860668844" className="w-full py-4 bg-primary text-white rounded-2xl font-bold text-lg flex items-center justify-center gap-3 hover:bg-primary/90 transition-colors shadow-lg active:scale-[0.98]">
                     <Phone size={20} className="text-accent" /> Call Now
-                  </Link>
-                  <Link href="https://wa.me/919876543210" className="w-full py-4 bg-[#25D366] text-white rounded-2xl font-bold text-lg flex items-center justify-center gap-3 hover:bg-[#20bd5a] transition-colors shadow-lg active:scale-[0.98]">
+                  </a>
+                  <a href="https://wa.me/918860668844" target="_blank" className="w-full py-4 bg-[#25D366] text-white rounded-2xl font-bold text-lg flex items-center justify-center gap-3 hover:bg-[#20bd5a] transition-colors shadow-lg active:scale-[0.98]">
                     <MessageSquare size={20} fill="currentColor" /> Chat on WhatsApp
-                  </Link>
+                  </a>
                 </div>
 
                 <div className="p-5 bg-gray-50 rounded-2xl border border-gray-100 font-medium text-center text-primary/60 text-xs leading-relaxed">

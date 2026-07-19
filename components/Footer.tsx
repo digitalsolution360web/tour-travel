@@ -66,7 +66,16 @@ export default function Footer() {
                 <div className="w-9 h-9 bg-white/10 rounded-xl flex items-center justify-center shrink-0 border border-white/20">
                   <Phone className="text-accent" size={16} />
                 </div>
-                <span className="text-white/90 text-[13px] font-bold tracking-tight">+91 98765 43210</span>
+                <div className="flex flex-col gap-1.5">
+                  <a href="tel:+918860668844" className="text-white/90 text-[13px] font-bold tracking-tight hover:text-accent">+91 88606 68844</a>
+                  <a href="tel:+918800411163" className="text-white/90 text-[13px] font-bold tracking-tight hover:text-accent">+91 88004 11163</a>
+                </div>
+              </div>
+              <div className="flex gap-4 items-start">
+                <div className="w-9 h-9 bg-white/10 rounded-xl flex items-center justify-center shrink-0 border border-white/20">
+                  <Mail className="text-accent" size={16} />
+                </div>
+                <a href="mailto:info@travotours.in" className="text-white/90 text-[13px] font-bold tracking-tight hover:text-accent truncate">info@travotours.in</a>
               </div>
             </div>
           </div>

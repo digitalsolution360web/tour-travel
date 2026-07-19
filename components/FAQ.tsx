@@ -159,7 +159,7 @@ export default function FAQ() {
 
           <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
             <a
-              href="tel:+919876543210"
+              href="tel:+918860668844"
               className="group flex items-center gap-4 bg-primary hover:bg-primary/95 text-white px-10 py-5 rounded-[2rem] font-black text-xs uppercase tracking-[0.2em] transition-all shadow-2xl active:scale-95"
             >
               <PhoneCall size={18} className="transition-transform group-hover:rotate-12" />
@@ -167,7 +167,8 @@ export default function FAQ() {
             </a>
 
             <a
-              href="/contact"
+              href="https://wa.me/918860668844"
+              target="_blank"
               className="group flex items-center gap-4 bg-white border-2 border-primary/10 hover:border-accent text-primary px-10 py-5 rounded-[2rem] font-black text-xs uppercase tracking-[0.2em] transition-all shadow-xl active:scale-95"
             >
               <MessageCircle size={18} className="transition-transform group-hover:scale-110" />

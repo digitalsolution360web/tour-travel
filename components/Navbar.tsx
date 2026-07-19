@@ -110,9 +110,10 @@ export default function Navbar() {
               <div className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-accent">
                 <Phone size={20} />
               </div>
-              <div>
+              <div className="flex flex-col gap-1.5">
                 <p className="text-[9px] font-black text-accent uppercase tracking-[0.2em] mb-0.5">Assistance</p>
-                <p className="text-lg font-bold text-white tracking-tight leading-none">+91 98765 43210</p>
+                <a href="tel:+918860668844" className="text-lg font-bold text-white tracking-tight hover:text-accent outline-none">+91 88606 68844</a>
+                <a href="tel:+918800411163" className="text-[15px] font-bold text-white/80 tracking-tight hover:text-accent outline-none">+91 88004 11163</a>
               </div>
             </div>
             <p className="text-white/30 text-[10px] font-medium italic truncate">© 2026 Travotours & Travels. All rights reserved.</p>

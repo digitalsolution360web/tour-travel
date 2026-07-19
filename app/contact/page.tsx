@@ -77,8 +77,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h4 className="text-accent mb-2">Call Specialists</h4>
-                    <p className="text-2xl font-bold text-primary mb-1 tracking-tight">+91 98765 43210</p>
-                    <p className="text-2xl font-bold text-primary tracking-tight">+91 09876 54321</p>
+                    <a href="tel:+918860668844" className="block text-2xl font-bold text-primary mb-1 tracking-tight hover:text-accent outline-none">+91 88606 68844</a>
+                    <a href="tel:+918800411163" className="block text-2xl font-bold text-primary tracking-tight hover:text-accent outline-none">+91 88004 11163</a>
                   </div>
                 </div>
 
@@ -89,9 +89,19 @@ export default function ContactPage() {
                   <div>
                     <h4 className="text-[#25D366] mb-2">WhatsApp Connect</h4>
                     <p className="text-primary/70 font-bold text-base mb-4 max-w-xs leading-relaxed">Chat with us for instant package quotes and daily availability.</p>
-                    <Link href="https://wa.me/919876543210" className="inline-flex items-center gap-3 bg-[#25D366] text-white px-8 py-3.5 rounded-full font-bold uppercase tracking-widest text-[10px] shadow-lg hover:scale-105 transition-all">
+                    <a href="https://wa.me/918860668844" target="_blank" className="inline-flex items-center gap-3 bg-[#25D366] text-white px-8 py-3.5 rounded-full font-bold uppercase tracking-widest text-[10px] shadow-lg hover:scale-105 transition-all">
                       Open WhatsApp Hub
-                    </Link>
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex gap-8 items-start group">
+                  <div className="w-16 h-16 bg-accent text-primary rounded-2xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform shadow-xl">
+                    <Mail size={28} />
+                  </div>
+                  <div>
+                    <h4 className="text-accent mb-2">Email Support</h4>
+                    <a href="mailto:info@travotours.in" className="block text-2xl font-bold text-primary tracking-tight hover:text-accent outline-none">info@travotours.in</a>
                   </div>
                 </div>
 

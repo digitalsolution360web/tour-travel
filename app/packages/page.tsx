@@ -7,7 +7,6 @@ const packages = [
     id: "shimla",
     title: "Shimla Hill Station Special",
     image: "/shi.jpg",
-    price: "₹7,999",
     duration: "3N/4D",
     rating: 4.9,
     reviews: "120+",
@@ -17,7 +16,6 @@ const packages = [
     id: "rishikesh",
     title: "Rishikesh Adventure & Spirituality",
     image: "/rishi1.jpeg",
-    price: "₹5,499",
     duration: "2N/3D",
     rating: 4.8,
     reviews: "95+",
@@ -27,7 +25,6 @@ const packages = [
     id: "manali",
     title: "Manali & Solang Valley Adventure",
     image: "/shi2.jpg",
-    price: "₹9,999",
     duration: "4N/5D",
     rating: 5.0,
     reviews: "150+",
@@ -37,7 +34,6 @@ const packages = [
     id: "mcleodganj",
     title: "McLeod Ganj & Triund Trekking",
     image: "/mcleod.png",
-    price: "₹8,499",
     duration: "4N/5D",
     rating: 4.9,
     reviews: "110+",
@@ -47,7 +43,6 @@ const packages = [
     id: "haridwar",
     title: "Haridwar Spiritual Journey",
     image: "/haridwar.png",
-    price: "₹6,999",
     duration: "4N/5D",
     rating: 4.7,
     reviews: "85+",
@@ -57,7 +52,6 @@ const packages = [
     id: "jaipur",
     title: "Jaipur Pink City Heritage",
     image: "/jaipur.png",
-    price: "₹12,499",
     duration: "6N/7D",
     rating: 4.8,
     reviews: "210+",
@@ -67,7 +61,6 @@ const packages = [
     id: "agra",
     title: "Agra Mughal Heritage Tour",
     image: "/agra.png",
-    price: "₹10,999",
     duration: "6N/7D",
     rating: 4.9,
     reviews: "320+",
@@ -77,7 +70,6 @@ const packages = [
     id: "delhi",
     title: "Delhi Capital City Highlights",
     image: "/delhi.png",
-    price: "₹5,999",
     duration: "3N/4D",
     rating: 4.6,
     reviews: "140+",
@@ -87,7 +79,6 @@ const packages = [
     id: "nainital",
     title: "Nainital Lakes & Hills",
     image: "/nainital.png",
-    price: "₹7,999",
     duration: "3N/4D",
     rating: 4.8,
     reviews: "180+",
@@ -97,7 +88,6 @@ const packages = [
     id: "chopta",
     title: "Chopta Mini Switzerland Trek",
     image: "/mountain.webp",
-    price: "₹8,999",
     duration: "3N/4D",
     rating: 5.0,
     reviews: "75+",
@@ -130,26 +120,23 @@ export default function PackagesPage() {
                     Premium Experience
                   </div>
                 </div>
-                <div className="p-10">
+                <div className="p-5">
                   <div className="flex justify-between items-center mb-8">
                     <span className="flex items-center gap-2 text-accent font-black text-xs uppercase tracking-[0.3em]">
                       <Clock size={16} /> {pkg.duration}
                     </span>
                     <div className="flex items-center gap-1 bg-gray-50 px-4 py-1.5 rounded-full">
-                       <Star size={14} className="text-accent fill-accent" />
-                       <span className="text-primary font-black text-xs">{pkg.rating} | {pkg.reviews} Reviews</span>
+                      <Star size={14} className="text-accent fill-accent" />
+                      <span className="text-primary font-black text-xs">{pkg.rating} | {pkg.reviews} Reviews</span>
                     </div>
                   </div>
                   <h3 className="mb-4 text-primary leading-[1.2] group-hover:text-accent transition-colors">{pkg.title}</h3>
                   <p className="text-primary/60 font-bold text-base mb-8 line-clamp-2 leading-relaxed">{pkg.description}</p>
-                  
-                  <div className="flex items-center justify-between pt-8 border-t border-gray-50">
-                    <div>
-                      <p className="text-[9px] text-primary/40 font-bold uppercase tracking-widest mb-1">Total Package Price</p>
-                      <p className="text-3xl font-bold text-primary tracking-tight"> {pkg.price}</p>
-                    </div>
-                    <Link href={`/packages/${pkg.id}`} className="bg-primary text-white w-14 h-14 rounded-2xl flex items-center justify-center hover:bg-accent hover:text-primary transition-all shadow-xl group/btn">
-                      <ArrowRight size={24} className="group-hover/btn:translate-x-1 transition-transform" />
+
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-50">
+                    <span className="text-xs font-bold text-primary/40 uppercase tracking-widest">Premium Package</span>
+                    <Link href={`/packages/${pkg.id}`} className="flex items-center gap-3 bg-primary text-white px-6 py-3.5 rounded-2xl font-bold text-xs uppercase tracking-wider hover:bg-accent hover:text-primary transition-all shadow-xl group/btn active:scale-95">
+                      View Tour <ArrowRight size={24} className="group-hover/btn:translate-x-1 transition-transform" />
                     </Link>
                   </div>
                 </div>

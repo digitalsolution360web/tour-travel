@@ -7,7 +7,7 @@ export default function WhatsAppButton() {
   return (
     <div className="fixed bottom-24 right-6 z-[9999] md:bottom-10 md:right-10">
       <Link
-        href="https://wa.me/919876543210"
+        href="https://wa.me/918860668844"
         target="_blank"
         className="relative flex items-center justify-center w-16 h-16 bg-[#25D366] text-white rounded-full shadow-[0_10px_30px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform group animate-bounce-slow"
       >

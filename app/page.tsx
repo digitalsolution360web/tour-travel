@@ -9,7 +9,6 @@ const allPackages = [
     id: "shimla",
     title: "Shimla Hill Station Special",
     image: "/shi.jpg",
-    price: "₹7,999",
     duration: "3N/4D",
     rating: 4.9,
     reviews: "120+",
@@ -19,7 +18,6 @@ const allPackages = [
     id: "rishikesh",
     title: "Rishikesh Adventure & Spirituality",
     image: "/rishi1.jpeg",
-    price: "₹5,499",
     duration: "2N/3D",
     rating: 4.8,
     reviews: "95+",
@@ -29,7 +27,6 @@ const allPackages = [
     id: "manali",
     title: "Manali & Solang Valley Adventure",
     image: "/shi2.jpg",
-    price: "₹9,999",
     duration: "4N/5D",
     rating: 5.0,
     reviews: "150+",
@@ -39,7 +36,6 @@ const allPackages = [
     id: "mcleodganj",
     title: "McLeod Ganj & Triund Trekking",
     image: "/mcleod.png",
-    price: "₹8,499",
     duration: "4N/5D",
     rating: 4.9,
     reviews: "110+",
@@ -49,7 +45,6 @@ const allPackages = [
     id: "haridwar",
     title: "Haridwar Spiritual Journey",
     image: "/haridwar.png",
-    price: "₹6,999",
     duration: "4N/5D",
     rating: 4.7,
     reviews: "85+",
@@ -59,7 +54,6 @@ const allPackages = [
     id: "jaipur",
     title: "Jaipur Pink City Heritage",
     image: "/jaipur.png",
-    price: "₹12,499",
     duration: "6N/7D",
     rating: 4.8,
     reviews: "210+",
@@ -69,7 +63,6 @@ const allPackages = [
     id: "agra",
     title: "Agra Mughal Heritage Tour",
     image: "/agra.png",
-    price: "₹10,999",
     duration: "6N/7D",
     rating: 4.9,
     reviews: "320+",
@@ -79,7 +72,6 @@ const allPackages = [
     id: "delhi",
     title: "Delhi Capital City Highlights",
     image: "/delhi.png",
-    price: "₹5,999",
     duration: "3N/4D",
     rating: 4.6,
     reviews: "140+",
@@ -89,7 +81,6 @@ const allPackages = [
     id: "nainital",
     title: "Nainital Lakes & Hills",
     image: "/nainital.png",
-    price: "₹7,999",
     duration: "3N/4D",
     rating: 4.8,
     reviews: "180+",
@@ -99,7 +90,6 @@ const allPackages = [
     id: "chopta",
     title: "Chopta Mini Switzerland Trek",
     image: "/mountain.webp",
-    price: "₹8,999",
     duration: "3N/4D",
     rating: 5.0,
     reviews: "75+",
@@ -143,7 +133,7 @@ export default function Home() {
                     Best Seller
                   </div>
                 </div>
-                <div className="p-8">
+                <div className="p-5">
                   <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center gap-1.5 bg-gray-50 px-3 py-1.5 rounded-full">
                       <Star size={14} className="text-accent fill-accent" />
@@ -153,14 +143,11 @@ export default function Home() {
                   </div>
                   <h3 className="text-2xl font-bold text-primary mb-4 group-hover:text-accent transition-colors leading-tight">{pkg.title}</h3>
                   <p className="text-primary/60 font-medium text-sm mb-8 line-clamp-2 leading-relaxed">{pkg.description}</p>
-                  
+
                   <div className="flex items-center justify-between pt-6 border-t border-gray-50">
-                    <div>
-                      <p className="text-[10px] font-black text-primary/40 uppercase tracking-[0.15em] mb-1">Starting Price</p>
-                      <span className="text-2xl font-bold text-primary">{pkg.price}</span>
-                    </div>
-                    <Link href={`/packages/${pkg.id}`} className="w-12 h-12 bg-primary text-white rounded-2xl flex items-center justify-center hover:bg-accent hover:text-primary transition-all shadow-lg group/btn active:scale-95">
-                      <ArrowRight size={20} className="group-hover/btn:translate-x-1 transition-transform" />
+                    <span className="text-xs font-bold text-primary/40 uppercase tracking-widest">Premium Package</span>
+                    <Link href={`/packages/${pkg.id}`} className="flex items-center gap-2 bg-primary text-white px-5 py-3 rounded-2xl font-semibold text-xs uppercase tracking-wider hover:bg-accent hover:text-primary transition-all shadow-md group/btn active:scale-95">
+                      View Tour <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
                     </Link>
                   </div>
                 </div>
@@ -179,7 +166,7 @@ export default function Home() {
       {/* World-Class Comfort & Standards Section */}
       <section className="py-24 bg-primary text-white overflow-hidden relative rounded-t-[3rem] md:rounded-t-[5rem]">
         <div className="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
-        
+
         <div className="section-container relative z-10 text-center mb-16">
           <span className="text-accent font-bold uppercase tracking-[0.3em] text-[11px] mb-3 block">Unmatched Quality</span>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Premium Travel Standard</h2>
@@ -296,7 +283,7 @@ export default function Home() {
           <div className="bg-accent rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
             <div className="absolute top-0 right-0 w-96 h-96 bg-white/20 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
-            
+
             <h2 className="text-4xl md:text-6xl font-black text-primary mb-8 relative z-10 tracking-tight">Ready for Your <br className="hidden md:block" /> Dream Adventure?</h2>
             <p className="text-primary/80 font-bold text-xl mb-12 max-w-2xl mx-auto relative z-10 leading-relaxed">
               Plan your next holiday with the experts. We offer customized packages and 24/7 support to ensure your trip is perfect.
@@ -305,7 +292,7 @@ export default function Home() {
               <Link href="/contact" className="bg-primary hover:bg-primary/90 text-white px-12 py-5 rounded-2xl font-black text-xs uppercase tracking-[0.2em] shadow-2xl transition-all active:scale-95">
                 Book My Tour
               </Link>
-              <Link href="tel:+919876543210" className="bg-white text-primary px-12 py-5 rounded-2xl font-black text-xs uppercase tracking-[0.2em] shadow-xl transition-all hover:bg-gray-50 flex items-center justify-center gap-3">
+              <Link href="tel:+918860668844" className="bg-white text-primary px-12 py-5 rounded-2xl font-black text-xs uppercase tracking-[0.2em] shadow-xl transition-all hover:bg-gray-50 flex items-center justify-center gap-3">
                 <Phone size={18} className="text-accent" /> Call Expert
               </Link>
             </div>
